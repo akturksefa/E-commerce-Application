@@ -3,8 +3,9 @@ package com.akturk.e_commerce.service;
 import com.akturk.e_commerce.exceptions.UserNotFoundException;
 import com.akturk.e_commerce.model.User;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public interface UserService {
 
     boolean ExistsByUserName(String userName);

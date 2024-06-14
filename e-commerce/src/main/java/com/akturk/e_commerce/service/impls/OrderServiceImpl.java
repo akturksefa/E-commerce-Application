@@ -15,6 +15,7 @@ import com.akturk.e_commerce.repository.OrderRepository;
 import com.akturk.e_commerce.repository.ProductRepository;
 import com.akturk.e_commerce.repository.UserRepository;
 import com.akturk.e_commerce.service.NotificationService;
+import com.akturk.e_commerce.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ import java.util.Set;
 
 @Component
 @Slf4j
-public class OrderServiceImpl {
+public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private UserRepository userRepository;

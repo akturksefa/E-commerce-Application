@@ -6,6 +6,7 @@ import com.akturk.e_commerce.exceptions.CategoryNotFoundException;
 import com.akturk.e_commerce.exceptions.ServiceLogicException;
 import com.akturk.e_commerce.model.Category;
 import com.akturk.e_commerce.repository.CategoryRepository;
+import com.akturk.e_commerce.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class CategoryServiceImpl {
+public class CategoryServiceImpl implements CategoryService {
 
 
     @Autowired

@@ -27,7 +27,7 @@ public class CategoryController {
     {
       return  categoryService.getAllCategories();
     }
-
+    @GetMapping("/get/byId")
     ResponseEntity<ApiResponseDto<?>> getCategoryById(@RequestParam String id) throws ServiceLogicException
     {
         return categoryService.getCategoryById(id);

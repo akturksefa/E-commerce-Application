@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class CartController {
 
     @Autowired
-    private CartService cartService;
+    private  CartService cartService;
 
     @PostMapping("/add")
     ResponseEntity<ApiResponseDto<?>> addItemToCart(@RequestBody CartItemRequestDto requestDto) throws UserNotFoundException, ServiceLogicException, ProductNotFoundException {

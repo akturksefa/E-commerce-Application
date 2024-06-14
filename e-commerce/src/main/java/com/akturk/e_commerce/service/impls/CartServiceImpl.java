@@ -13,17 +13,19 @@ import com.akturk.e_commerce.model.Product;
 import com.akturk.e_commerce.repository.CartRepository;
 import com.akturk.e_commerce.repository.ProductRepository;
 import com.akturk.e_commerce.repository.UserRepository;
+import com.akturk.e_commerce.service.CartService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+
 
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 @Component
 @Slf4j
-public class CartServiceImpl {
+public class CartServiceImpl implements CartService {
 
     @Autowired
     CartRepository cartRepository;
@@ -31,6 +33,7 @@ public class CartServiceImpl {
     UserRepository userRepository;
     @Autowired
     ProductRepository productRepository;
+
 
     public ResponseEntity<ApiResponseDto<?>> addItemToCart (CartItemRequestDto requestDto) throws ServiceLogicException, UserNotFoundException, ProductNotFoundException {
         try{
@@ -83,7 +86,7 @@ public class CartServiceImpl {
             return ResponseEntity.ok(
                     ApiResponseDto.builder()
                             .isSuccess(true)
-                            .message(cartResponse)
+                            .response(cartResponse)
                             .build()
             );
         }catch (UserNotFoundException e) {
